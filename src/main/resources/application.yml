@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: LineBot-Example
+  main:
+    banner-mode: off
+    log-startup-info: false
+  messages:
+    basename: messages
+    encoding: UTF-8
+    fallback-to-system-locale: false
+
+server:
+  port: ${PORT:5000}
+
+logging:
+  level:
+    root: ${LOG_LEVEL:INFO}
+
+line:
+  bot:
+    channelSecret: ${LINE_CHANNEL_SECRET}
+    channelToken: ${LINE_CHANNEL_TOKEN}
+    handler:
+      path: /callback
+
+chatgpt:
+  url: ${CHATGPT_URL}
+  model: ${CHATGPT_MODEL}
+  key: ${CHATGPT_KEY}
